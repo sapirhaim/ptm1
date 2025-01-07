@@ -13,21 +13,19 @@ public class Message {
     public Message(byte[] data) {
         this.data = data;
         this.asText = new String(data);
-        this.asDouble = Double.parseDouble(this.asText);
+        this.asDouble = parseToDouble(this.asText);
         this.date = new Date();
     }
 
     public Message(String AsText) {
         this.data = AsText.getBytes();
         this.asText = AsText;
-        this.asDouble = Double.parseDouble(this.asText);
+        this.asDouble = parseToDouble(this.asText);
         this.date = new Date();
-
-        //this(asText.getBytes());
-        }
+     }
 
     public Message(double AsDouble) {
-        this.data = new byte[] { (byte) AsDouble };
+        this.data = Double.toString(AsDouble).getBytes();
         this.asText = Double.toString(AsDouble);
         this.asDouble = AsDouble;
         this.date = new Date();
