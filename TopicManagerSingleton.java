@@ -21,7 +21,7 @@ public class TopicManagerSingleton {
             return topics.get(topicName);
         }
 
-        public Collection<Topic> getTopic() {
+        public Collection<Topic> getTopics() {
             return topics.values();
         }
 
